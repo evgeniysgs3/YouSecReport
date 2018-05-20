@@ -1,0 +1,19 @@
+{
+    // Сканируемый хост
+    "host": "127.0.0.1",
+    // int (timestamp) начало сканирования
+    "starttime": 12345123,
+    // int (timestamp) окончание сканирования
+    "endtime": 12345123,
+    // Host status (up, down)
+    "hoststatus": "up",
+    // С какими аргументыми запускалось сканирование
+    "commandline": "-sV",
+    // Какие сервисы расоложены на сканируемом хосте
+    "services": [
+        {"port": 21, "protocol": "tcp", "state": "open", "service": "ftp", "banner": "product: vsftpd version: 2.2.2 ostype: Unix", "cpe": "cpe:/<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>"},
+        {"port": 22, "protocol": "tcp", "state": "open", "service": "ssh", "banner": "product: OpenSSH version: 5.3 extrainfo: protocol 2.0", "cpe": "cpe:/<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>"},
+        {"port": 25, "protocol": "tcp", "state": "open", "service": "smtp", "banner": "product: Exim smtpd version: 4.84_2 hostname: d0507", "cpe": "cpe:/<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>"},
+        {"port": 80, "protocol": "tcp", "state": "open", "service": "http", "banner": "product: Apache httpd version: 2.2.15 extrainfo: (CentOS)", "cpe": "cpe:/a:apache:http_server:2.2.22"}
+    ]
+}

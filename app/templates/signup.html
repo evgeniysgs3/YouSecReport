@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+<head>
+    <title>YourSecReport</title>
+
+    <link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/jumbotron-narrow.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+
+{% endblock%}
+
+{% block content %}
+<div class="jumbotron">
+    <h1>Your Security Report</h1>
+    {% from "_formhelpers.html" import render_field %}
+    <form name="signup_form" class="form-sigin" action="/signup" method="POST">
+        {{ render_field(form.name, class="form-control", placeholder="Name", autofocus=true) }}
+        {{ render_field(form.email, class="form-control", placeholder="Email address") }}
+        {{ render_field(form.password, class="form-control", placeholder="Password") }}
+        {{ form.csrf_token }}
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Up">
+    </form>
+</div>
+{% endblock %}

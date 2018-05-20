@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+<head>
+    <title>YourSecReport</title>
+
+    <link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/jumbotron-narrow.css">
+</head>
+
+{% endblock%}
+
+{% block content %}
+    {% if not current_user.is_authenticated %}
+        <h3>Hello, you are not logged in</h3>
+        <p><a class="btn btn-lg btn-success" href="signup" role="button">Sign Up Today</a></p>
+    {% else %}
+        <h3>Hello, {{ current_user._name }}</h3>
+        <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Service</th>
+      <th scope="col">Last Scan Date</th>
+      <th scope="col">Action</th> 
+    </tr>
+  </thead>
+  <tbody>
+    {% for service, last_scan_data in services.items() %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ service }}</td>
+            <td>{{ last_scan_data }}</td>
+            <td>
+                <a href="/personal/{{ service }}" class="btn btn-primary a-btn-slide-text">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <span><strong>Delete</strong></span>            
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    <div class="control-group">
+    {% from "_formhelpers.html" import render_field %}
+    <form id="start_scan" class="form-horizontal" action="/personal" method="POST">
+        {{ render_field(form.ip, class="control-group", placeholder="ip your service") }}
+        {{ form.csrf_token }}
+        <input type="submit" class="btn btn-primary" value="Add Service">
+    </form>
+    </div>
+    {% endif %}
+{% endblock %}

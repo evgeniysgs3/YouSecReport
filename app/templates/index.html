@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+<head>
+    <title>YourSecReport</title>
+
+    <link rel="stylesheet" type="text/css" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/jumbotron-narrow.css">
+</head>
+
+{% endblock%}
+
+{% block content %}
+    {% if not current_user.is_authenticated %}
+        <h3>Hello, you are't login</h3>
+        <p><a class="btn btn-lg btn-success" href="signup" role="button">Sign Up Today</a></p>
+    {% else %}
+        <h3>Hello, {{ current_user._name }}</h3>
+    {% endif %}
+{% endblock %}

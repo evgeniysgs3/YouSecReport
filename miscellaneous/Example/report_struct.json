@@ -1,0 +1,25 @@
+{
+    "Owner": "email@email.com",     // На какое мыло отпралять отчет
+    "IP_address": "127.0.0.1",      // Сканируемый ip
+    "Open_ports": [                 // Здесь обязательно список - результат работы nmap или если успеем shodan
+        21,
+        22,
+        80,
+        443,
+        3309
+    ],
+    "Scan_time_start": "YYYY-MM-DD h-m-s",  // Время начала скана
+    "Scan_time_stop": "YYYY-MM-DD h-m-s",   // Время окончания сканирования
+
+                                            // Инструменты какие вызывались, зависит от открытых портов.
+                                            // Ниже тулза и ссылка на файл, где лежит результат,
+                                            // это будет все передаваться на вход парсеру создателю отчета (html либо PDF)
+    "Tools": {
+        "Nmap": "file_name_result",                          
+        "Nikto": "file_name_result",
+        "Sn1per": "file_name_result",
+        "CORStest": "file_mame_resilt",
+        "OWASP_ZAP": "file_mame_resilt",
+        "Nessus_6": "file_mame_resilt",
+    }
+}

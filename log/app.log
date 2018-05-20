@@ -1,0 +1,8 @@
+2018-03-10 23:16:16,470 INFO adapters.nmap.nmapadapter __init__: Function called
+2018-03-10 23:16:16,481 INFO adapters.nmap.nmapadapter start: Function called
+2018-03-10 23:16:16,482 INFO nmap started on IP 127.0.0.1
+2018-03-10 23:17:55,570 INFO adapters.nmap.nmapadapter get_result_json: Function called
+2018-03-10 23:27:58,038 INFO adapters.nmap.nmapadapter __init__: Function called
+2018-03-10 23:27:58,040 INFO adapters.nmap.nmapadapter start: Function called
+2018-03-10 23:27:58,040 INFO nmap started on IP 31.31.196.157
+2018-03-10 23:29:46,123 INFO adapters.nmap.nmapadapter get_result_json: Function called
